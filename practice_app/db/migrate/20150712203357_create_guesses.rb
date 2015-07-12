@@ -1,7 +1,7 @@
 class CreateGuesses < ActiveRecord::Migration
   def change
     create_table :guesses do |t|
-      t.integer :floor
+      t.integer :floor, :default => 0
       t.references :game, index: true, foreign_key: true
 
       t.timestamps null: false

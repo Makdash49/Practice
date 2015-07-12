@@ -21,10 +21,10 @@ ActiveRecord::Schema.define(version: 20150712203357) do
   end
 
   create_table "guesses", force: :cascade do |t|
-    t.integer  "floor"
+    t.integer  "floor",      default: 0
     t.integer  "game_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   add_index "guesses", ["game_id"], name: "index_guesses_on_game_id"
