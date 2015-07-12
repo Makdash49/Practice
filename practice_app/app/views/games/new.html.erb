@@ -7,4 +7,18 @@
 	<p>You have this many eggs to drop: <%= @game.eggs %></p>
 
 	<p>The secret break-floor is... shhhhhhhhh: <%= @game.breakfloor %></p>
+
+
+
+
+	<%= form_for @game do |f| %>
+	  <%= f.number_field :guesses %>
+	  <%= f.submit %>
+	<% end %>
+
+	<h3>Your Guesses:</h3>
+
 </div>
+
+
+

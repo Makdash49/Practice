@@ -11,14 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150712191139) do
+ActiveRecord::Schema.define(version: 20150712203357) do
 
   create_table "games", force: :cascade do |t|
     t.integer  "breakfloor"
-    t.integer  "guesses",    default: 0
     t.integer  "eggs",       default: 2
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
+
+  create_table "guesses", force: :cascade do |t|
+    t.integer  "floor"
+    t.integer  "game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "guesses", ["game_id"], name: "index_guesses_on_game_id"
 
 end
