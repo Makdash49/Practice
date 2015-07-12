@@ -1,10 +1,9 @@
 class GamesController < ApplicationController
   def new
-  	@game = Game.create
-  	@game.update_attributes(breakfloor:@game.random_floor)
-  end
-
-  def update
+  	@game = Game.first
+  	@game.update_attributes(breakfloor: Game.random_floor)
+  	@guess = @game.guesses.build
+  	@guess.save
   end
 
 end

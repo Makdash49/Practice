@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   resources :games do
   end
 
+  resources :guesses do
+  end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

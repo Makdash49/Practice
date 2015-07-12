@@ -2,7 +2,7 @@
 	<h1>Welcome to the Egg Game!</h1>
 
 
-	<p>You've made this many guesses: <%= @game.guesses %></p>
+	<p>You've made this many guesses: <%= @game.guesses.count %></p>
 
 	<p>You have this many eggs to drop: <%= @game.eggs %></p>
 
@@ -11,12 +11,16 @@
 
 
 
-	<%= form_for @game do |f| %>
-	  <%= f.number_field :guesses %>
+	<%= form_for @guess do |f| %>
+	  <%= f.number_field :floor %>
 	  <%= f.submit %>
 	<% end %>
 
 	<h3>Your Guesses:</h3>
+
+	<% @game.guesses.each do |guess| %>
+		<p><%= guess.floor %></p>
+	<% end %>
 
 </div>
 
