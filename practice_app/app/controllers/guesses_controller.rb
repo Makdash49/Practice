@@ -12,5 +12,6 @@ class GuessesController < ApplicationController
   	# p params[:guess][:floor]
 
   	@guess.update_attributes(floor: params[:guess][:floor])
+  	redirect_to root_path
   end
 end
