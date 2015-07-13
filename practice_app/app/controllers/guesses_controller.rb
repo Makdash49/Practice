@@ -17,12 +17,17 @@ class GuessesController < ApplicationController
   # end
 
   def create
-    @guess = Guess.create(guess_params)
-    @game = Game.find(@guess.game_id)
+    @guess = Guess.new(guess_params)
+    if @guess.save
+      @game = Game.find(@guess.game_id)
 
-
+      if @guess.floor >= @game.breakfloor
+        @game.update_attributes(eggs: @game.eggs - 1)
+      end
     redirect_to @game
-
+    else
+      redirect_to(:back)
+    end
   end
 
   private

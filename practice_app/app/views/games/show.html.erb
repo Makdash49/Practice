@@ -1,4 +1,14 @@
+<%= button_to "New Game", { action: "create" } %>
+
 <div class="container">
+	<% if @message %>
+		<h1><%= @message %></h1>
+	<% end %>
+
+	<% if @game_message %>
+		<h1><%= @game_message %></h1>
+	<% end %>
+
 	<h3> Player's Name: <%= @game.player %></h3>
 	<p>The secret breakfloor number is... <%= @game.breakfloor %></p>
 	<p>You've made this many guesses:  <%= @game.guesses.count %>
@@ -19,4 +29,3 @@
 	<% end %>
 
 </div>
-	<%= button_to "New Game", { action: "create" } %>
