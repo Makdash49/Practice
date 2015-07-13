@@ -23,12 +23,14 @@ class GamesController < ApplicationController
   end
 
   def create
-  	@game = Game.create(breakfloor: Game.random_floor)
+  	@game = Game.create(breakfloor: Game.random_floor,
+                        player: ThronesFaker.name)
     redirect_to @game
   end
 
   def show
     @game = Game.find(params[:id])
+    @guess = Guess.new
   end
 
 end

@@ -1,4 +1,22 @@
 <div class="container">
-	<%= @game.id %>
-	<%= @game.breakfloor %>
+	<h3> Player's Name: <%= @game.player %></h3>
+	<p>The secret breakfloor number is... <%= @game.breakfloor %></p>
+	<p>You've made this many guesses:  <%= @game.guesses.count %>
+
+	<p>You have this many unbroken eggs: <%= @game.eggs %></p>
+
+
+	<%= form_for @guess do |f| %>
+		<%= f.hidden_field :game_id, :value => @game.id%>
+	  <%= f.number_field :floor %>
+	  <%= f.submit "Guess the Floor" %>
+	<% end %>
+
+	<h3>Your Guesses:</h3>
+
+	<% @game.guesses.each do |guess| %>
+		<%= "#{guess.floor}  " %>
+	<% end %>
+
 </div>
+	<%= button_to "New Game", { action: "create" } %>
