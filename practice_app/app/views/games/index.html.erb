@@ -1,0 +1,18 @@
+<%= button_to "Home", root_path, method: :get %>
+<%= button_to "New Game", { action: "create" } %>
+
+<div class="container">
+	<h1>Scores</h1>
+
+	<% @games.each do |game| %>
+		<% chosen = "" %>
+		<% game.guesses.each do |guess| %>
+			<% chosen += (guess.floor.to_s + " ") %>
+		<% end %>
+
+
+
+		<p><%= "#{game.player}, breakfloor: #{game.breakfloor.to_s}, Guesses: #{chosen} Number of Guesses: #{game.guesses.count}, Eggs Remaining: #{game.eggs}" %></p>
+		<% end %>
+
+</div>

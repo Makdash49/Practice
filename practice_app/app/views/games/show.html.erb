@@ -1,4 +1,6 @@
+<%= button_to "Home", root_path, method: :get %>
 <%= button_to "New Game", { action: "create" } %>
+<%= button_to "Scores", games_path, method: :get %>
 
 <div class="container">
 	<% if @message %>
@@ -10,7 +12,7 @@
 	<% end %>
 
 	<h3> Player's Name: <%= @game.player %></h3>
-	<p>The secret breakfloor number is... <%= @game.breakfloor %></p>
+
 	<p>You've made this many guesses:  <%= @game.guesses.count %>
 
 	<p>You have this many unbroken eggs: <%= @game.eggs %></p>
