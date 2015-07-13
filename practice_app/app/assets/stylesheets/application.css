@@ -23,3 +23,10 @@
   background-color: white;
   border-radius: 25px;
 }
+
+body {
+  background: url("http://images.huffingtonpost.com/2009-05-02-FallingEggsSky.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
