@@ -1,0 +1,29 @@
+<div class="container">
+	<h1>Welcome to the Egg Game!</h1>
+
+
+	<p>You've made this many guesses: <%= @game.guesses.count - 1 %></p>
+
+	<p>You have this many eggs to drop: <%= @game.eggs %></p>
+
+	<p>The secret break-floor is... shhhhhhhhh: <%= @game.breakfloor %></p>
+
+
+
+
+	<%= form_for @guess do |f| %>
+	  <%= f.number_field :floor %>
+	  <%= f.submit %>
+	<% end %>
+
+	<h3><%= @message %></h3>
+	<h3><%= @egg_message %></h3>
+
+
+	<h3>Your Guesses:</h3>
+
+	<% @game.guesses.each do |guess| %>
+		<p><%= guess.floor %></p>
+	<% end %>
+
+</div>

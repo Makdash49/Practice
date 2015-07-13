@@ -1,32 +1,14 @@
 <div class="container">
-	<h1>Welcome to the Egg Game!</h1>
+
+	<h1>Welcome to the Egg Game Man!</h1>
+	<p>The rules are you have two eggs and you have to use them to figure out on which floor the eggs will break.  The two eggs break on the same floor.  See how many guesses it takes you.  Find the approach that uses the least amount of drops.  The eggs do not weaken on each drop.   They're magic like that!</p>
 
 
-	<p>You've made this many guesses: <%= @game.guesses.count - 1 %></p>
+	<%= button_to "New Game", { action: "create" } %>
 
-	<p>You have this many eggs to drop: <%= @game.eggs %></p>
-
-	<p>The secret break-floor is... shhhhhhhhh: <%= @game.breakfloor %></p>
-
-
-
-
-	<%= form_for @guess do |f| %>
-	  <%= f.number_field :floor %>
-	  <%= f.submit %>
-	<% end %>
-
-	<h3><%= @message %></h3>
-	<h3><%= @egg_message %></h3>
-
-
-	<h3>Your Guesses:</h3>
-
-	<% @game.guesses.each do |guess| %>
-		<p><%= guess.floor %></p>
-	<% end %>
 
 </div>
+
 
 
 
